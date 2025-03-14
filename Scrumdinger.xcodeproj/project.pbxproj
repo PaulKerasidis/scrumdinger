@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		450307E82D84DC5D00137A2B /* ScrumStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450307E72D84DC5D00137A2B /* ScrumStore.swift */; };
 		4503508B2D837FD90086265A /* NewScrumSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4503508A2D837FD90086265A /* NewScrumSheet.swift */; };
 		4503508D2D8381F90086265A /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4503508C2D8381F90086265A /* History.swift */; };
 		456D92052D4E701900B3C8F7 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456D92042D4E701900B3C8F7 /* Theme.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		450307E72D84DC5D00137A2B /* ScrumStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrumStore.swift; sourceTree = "<group>"; };
 		4503508A2D837FD90086265A /* NewScrumSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewScrumSheet.swift; sourceTree = "<group>"; };
 		4503508C2D8381F90086265A /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		456D92042D4E701900B3C8F7 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 				457AEE362D78F06700F7B2BC /* ScrumTimer.swift */,
 				457AEE3A2D78F61000F7B2BC /* AVPlayer+Ding.swift */,
 				4503508C2D8381F90086265A /* History.swift */,
+				450307E72D84DC5D00137A2B /* ScrumStore.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 				457AEE392D78F2D500F7B2BC /* MeetingFooterView.swift in Sources */,
 				457AEE372D78F06700F7B2BC /* ScrumTimer.swift in Sources */,
 				456D92592D4E8AEF00B3C8F7 /* DailyScrum.swift in Sources */,
+				450307E82D84DC5D00137A2B /* ScrumStore.swift in Sources */,
 				45B215942D54BF3A0020E6DA /* DetailView.swift in Sources */,
 				45B0C2D52D779E4A003C1C96 /* MeetingHeaderView.swift in Sources */,
 				45DD37262D56523900778F53 /* DetailEditView.swift in Sources */,
