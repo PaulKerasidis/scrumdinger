@@ -1,7 +1,6 @@
 import SwiftUI
 
 
-@MainActor
 class ScrumStore: ObservableObject {
     @Published var scrums: [DailyScrum] = []
 
@@ -26,5 +25,15 @@ class ScrumStore: ObservableObject {
         }
         let scrums = try await task.value
         self.scrums = scrums
+    }
+
+
+    func save(scrums: [DailyScrum]) async throws {
+        let task = Task {
+            let data = try JSONEncoder().encode(scrums)
+            let outfile = try Self.fileURL()
+            try data.write(to: outfile)
+        }
+        _ = try await task.value
     }
 }
