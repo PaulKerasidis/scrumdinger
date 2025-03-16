@@ -1,51 +1,43 @@
-//
-//  ScrumsView.swift
-//  Scrumdinger
-//
-//  Created by Paulos Kerasidis on 1/2/25.
-//
-
 import SwiftUI
+
 
 struct ScrumsView: View {
     @Binding var scrums: [DailyScrum]
-    @State private var isPresentingNewScrumView: Bool = false
-    
+    @Environment(\.scenePhase) private var scenePhase
+    @State private var isPresentingNewScrumView = false
+    let saveAction: ()->Void
+
+
     var body: some View {
-        
-        NavigationStack{
+        NavigationStack {
             List($scrums) { $scrum in
-                NavigationLink(destination: DetailView(scrum: $scrum)){
+                NavigationLink(destination: DetailView(scrum: $scrum)) {
                     CardView(scrum: scrum)
                 }
                 .listRowBackground(scrum.theme.mainColor)
             }
             .navigationTitle("Daily Scrums")
-            .toolbar{
+            .toolbar {
                 Button(action: {
                     isPresentingNewScrumView = true
-                }){
+                }) {
                     Image(systemName: "plus")
                 }
                 .accessibilityLabel("New Scrum")
             }
         }
-        .sheet(isPresented: $isPresentingNewScrumView){
+        .sheet(isPresented: $isPresentingNewScrumView) {
             NewScrumSheet(scrums: $scrums, isPresentingNewScrumView: $isPresentingNewScrumView)
+        }
+        .onChange(of: scenePhase) { phase in
+            if phase == .inactive { saveAction() }
         }
     }
 }
 
-// MARK: - Preview Wrapper
-struct PreviewWrapper: View {
-    @State private var scrums = DailyScrum.sampleData
-    
-    var body: some View {
-        ScrumsView(scrums: $scrums)
-    }
-}
 
-// MARK: - Preview
-#Preview {
-    PreviewWrapper()
+struct ScrumsView_Previews: PreviewProvider {
+    static var previews: some View {
+        ScrumsView(scrums: .constant(DailyScrum.sampleData), saveAction: {})
+    }
 }
